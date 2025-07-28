@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/com.pharmadevs.ProyectoPharmaDevs.main.iml" filepath="$PROJECT_DIR$/.idea/modules/com.pharmadevs.ProyectoPharmaDevs.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/PharmaDevsSpring.main.iml" filepath="$PROJECT_DIR$/.idea/modules/PharmaDevsSpring.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/PharmaDevsSpring/ProyectoPharmaDevs.PharmaDevsSpring.main.iml" filepath="$PROJECT_DIR$/.idea/modules/PharmaDevsSpring/ProyectoPharmaDevs.PharmaDevsSpring.main.iml" />
     </modules>
   </component>
 </project>
