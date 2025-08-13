@@ -44,6 +44,7 @@ public class FacturaVentaServiceImpl implements FacturaVentaService{
 
         facturaventaExistente.setFecha(facturaventaNuevo.getFecha());
         facturaventaExistente.setMontototal(facturaventaNuevo.getMontototal());
+        facturaventaExistente.setImagen(facturaventaExistente.getImagen());
 
         return facturaVentaRepositorio.save(facturaventaExistente);
     }

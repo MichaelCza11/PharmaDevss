@@ -9,14 +9,17 @@ import java.util.Date;
 public class Facturaventa {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name ="ID_Factura_Venta")
+    @Column(name = "ID_Factura_Venta")
     private int idFacturaventa;
 
-    @Column(name ="Fecha")
+    @Column(name = "Fecha")
     private Date Fecha;
 
-    @Column(name ="Monto_Total")
+    @Column(name = "Monto_Total")
     private String Montototal;
+
+    @Column(name = "imagen")
+    private String imagen;
 
     @ManyToOne
     @JoinColumn(name = "ID_Cliente")
@@ -25,11 +28,12 @@ public class Facturaventa {
     public Facturaventa() {
     }
 
-    public Facturaventa(int idFacturaventa, Date fecha, String montototal) {
+    public Facturaventa(int idFacturaventa, Date fecha, String montototal, String imagen, Cliente cliente) {
         this.idFacturaventa = idFacturaventa;
         Fecha = fecha;
         Montototal = montototal;
-        cliente = cliente;
+        this.imagen = imagen;
+        this.cliente = cliente;
     }
 
     public int getIdFacturaventa() {
@@ -56,6 +60,14 @@ public class Facturaventa {
         Montototal = montototal;
     }
 
+    public String getImagen() {
+        return imagen;
+    }
+
+    public void setImagen(String imagen) {
+        this.imagen = imagen;
+    }
+
     public Cliente getCliente() {
         return cliente;
     }
@@ -66,11 +78,12 @@ public class Facturaventa {
 
     @Override
     public String toString() {
-        return "Facturaventa{" +'\'' +
-                "idFacturaventa=" + idFacturaventa +'\'' +
-                ", Fecha=" + Fecha +'\'' +
+        return "Facturaventa{" +
+                "idFacturaventa=" + idFacturaventa +
+                ", Fecha=" + Fecha +
                 ", Montototal='" + Montototal + '\'' +
-                ", Cliente='" + cliente + '\'' +
+                ", imagen='" + imagen + '\'' +
+                ", cliente=" + cliente +
                 '}';
     }
 }

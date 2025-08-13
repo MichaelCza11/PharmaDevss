@@ -8,14 +8,17 @@ import jakarta.persistence.*;
 public class Almacen {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name ="ID_Almacen" )
+    @Column(name = "ID_Almacen")
     private int idAlmacen;
 
     @Column(name = "Stock")
-    private String Stock;
+    private String stock;
 
     @Column(name = "Ubicacion")
-    private String Ubicacion;
+    private String ubicacion;
+
+    @Column(name = "imagen")
+    private String imagen;
 
     @ManyToOne
     @JoinColumn(name = "ID_Producto")
@@ -24,11 +27,12 @@ public class Almacen {
     public Almacen() {
     }
 
-    public Almacen(int idAlmacen, String stock, String ubicacion) {
+    public Almacen(int idAlmacen, String stock, String ubicacion, String imagen, Producto producto) {
         this.idAlmacen = idAlmacen;
-        Stock = stock;
-        Ubicacion = ubicacion;
-        producto = producto;
+        this.stock = stock;
+        this.ubicacion = ubicacion;
+        this.imagen = imagen;
+        this.producto = producto;
     }
 
     public int getIdAlmacen() {
@@ -40,19 +44,27 @@ public class Almacen {
     }
 
     public String getStock() {
-        return Stock;
+        return stock;
     }
 
     public void setStock(String stock) {
-        Stock = stock;
+        this.stock = stock;
     }
 
     public String getUbicacion() {
-        return Ubicacion;
+        return ubicacion;
     }
 
     public void setUbicacion(String ubicacion) {
-        Ubicacion = ubicacion;
+        this.ubicacion = ubicacion;
+    }
+
+    public String getImagen() {
+        return imagen;
+    }
+
+    public void setImagen(String imagen) {
+        this.imagen = imagen;
     }
 
     public Producto getProducto() {
@@ -66,10 +78,12 @@ public class Almacen {
     @Override
     public String toString() {
         return "Almacen{" +
-                "idAlmacen=" + idAlmacen +'\'' +
-                ", Stock='" + Stock + '\'' +
-                ", Ubicacion='" + Ubicacion + '\'' +
-                ", Producto='" + producto + '\'' +
+                "idAlmacen=" + idAlmacen +
+                ", stock='" + stock + '\'' +
+                ", ubicacion='" + ubicacion + '\'' +
+                ", imagen='" + imagen + '\'' +
+                ", producto=" + producto +
                 '}';
     }
 }
+

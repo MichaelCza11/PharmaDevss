@@ -46,6 +46,7 @@ public class AlmacenServiceImpl implements AlmacenService{
         almacenExistente.setProducto(almacenNuevo.getProducto());
         almacenExistente.setStock(almacenNuevo.getStock());
         almacenExistente.setUbicacion(almacenNuevo.getUbicacion());
+        almacenExistente.setImagen(almacenNuevo.getImagen());
         return almacenRepositorio.save(almacenExistente);
     }
 
